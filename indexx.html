@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+
+    <h1>Calculador de edad</h1>
+
+    <div class="container">
+
+    Edad: <input type="text" id="edad" name="edad"><br/>
+    Pais: <select name="pais" id="pais">
+            <option value="MX">Mexico</option>
+            <option value="US" selected="selected">EEUU</option>
+            <option value="UK">United kingdom</option>
+            <option value="">Otro</option>
+    </select>
+
+    <button type="button" id="calcular" onclick="verificar();" class="button">Calcular!</button>
+
+    </div>
+
+    <script type="text/javascript">
+
+    function verificar(){
+
+      var edad = document.getElementById("edad").value;
+      var pais = document.getElementById("pais").value;
+      var edad_taget;
+
+      console.log("Tu edad es: " + edad);
+      console.log("tu pais es: " + pais);
+
+      if (pais == "MX"){
+        edad_taget = 18;
+      } else if (pais == "US") {
+        edad_taget = 21;
+      } else if (pais == "UK") {
+        edad_taget = 16;
+      } else {
+        alert("Pais desconocido.");
+      }
+
+      if (edad >= edad_taget && edad < 150) {
+        console.log("Puedes entrar al antro");
+      } else if (edad < edad_taget) {
+        console.log("No puedes pasar, eres menor de edad.");
+      } else if(edad > 150){
+        alert("¿De verdad sigues vivo?");
+        }
+
+    }
+
+    </script>
+
+  </body>
+</html>
